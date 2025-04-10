@@ -6,7 +6,7 @@ Future<String> getData(String text) async {
 
   final headers = {
     'Authorization':
-        'Bearer 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',
+        'Bearer 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',
     'Content-Type': 'application/json',
   };
 

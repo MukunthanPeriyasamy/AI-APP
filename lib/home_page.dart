@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
 
 TextEditingController _controller = TextEditingController();
 
-String resultText = '';
+String resultText = 'Here you will get the answer !!';
 
 class _HomePageState extends State<HomePage> {
   void updateResult() async {
@@ -56,10 +56,10 @@ class _HomePageState extends State<HomePage> {
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Expanded(
+                child: Expanded(
+                  child: Card(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: SingleChildScrollView(
                         child: Text(
                           resultText,
