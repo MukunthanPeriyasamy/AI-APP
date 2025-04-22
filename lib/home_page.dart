@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
 
 TextEditingController _controller = TextEditingController();
 
-String resultText = 'Here you will get the answer !!';
+String resultText = '';
 
 class _HomePageState extends State<HomePage> {
   void updateResult() async {
@@ -34,13 +34,13 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                'Ask Anything !!',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
+              Text('Wlcome to Flutter GPT', style: TextStyle(fontSize: 20)),
+              Align(alignment: Alignment.center,child: Text('Your Personalized Assistent'),),
+              SizedBox(height: 20,),
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: TextField(
+                  onSubmitted: (value) => updateResult(),
                   controller: _controller,
                   decoration: InputDecoration(
                     suffixIcon: IconButton(
@@ -57,14 +57,12 @@ class _HomePageState extends State<HomePage> {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Expanded(
-                  child: Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SingleChildScrollView(
-                        child: Text(
-                          resultText,
-                          style: TextStyle(color: Colors.white, fontSize: 20),
-                        ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SingleChildScrollView(
+                      child: Text(
+                        resultText,
+                        style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ),
                   ),
